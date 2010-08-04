@@ -1,0 +1,1 @@
+require 'nagios/version'
