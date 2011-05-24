@@ -14,6 +14,14 @@ Subclass `Nagios::Plugin`, and define three methods:
 
  * **warning** - for any given *n*, returns whether in warning state.
 
+Optional methods:
+
+ * **critical_msg** - Message to be used during a critical state.
+
+ * **warning_msg** - Message to be used during a warning state.
+
+ * **ok_msg** - Message to be used during an OK state.
+
 Example Plugin
 ==============
 
@@ -23,7 +31,6 @@ In this trivial example, the plugin always measures 2, which is below both the w
     require 'nagios'
 
     class FooPlugin < Nagios::Plugin
-    
       def critical(n)
         n > 5
       end
