@@ -1,0 +1,5 @@
+
+Tue May 24 - 0.0.2
+ * Fixes exit_with() bug which doesn't use passed in `value`
+ * Adds methods for customizing return messages
+

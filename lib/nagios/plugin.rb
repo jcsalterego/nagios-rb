@@ -11,11 +11,11 @@ module Nagios
       begin
         @value = measure
         if critical(@value)
-          exit_with :critical, @value
+          exit_with :critical, get_msg(:critical, @value)
         elsif warning(@value)
-          exit_with :warning, @value
+          exit_with :warning, get_msg(:warning, @value)
         else
-          exit_with :ok, @value
+          exit_with :ok, get_msg(:ok, @value)
         end
       rescue => e
         exit_unknown e
@@ -42,9 +42,18 @@ module Nagios
     end
 
     private
+      def get_msg(level, value)
+        msg_method = "#{level}_msg".to_sym
+        if self.respond_to?(msg_method)
+          self.send(msg_method, value)
+        else
+          value
+        end
+      end
+
       def exit_with(level, value)
         @status = level.to_s.upcase
-        msg = to_s(@value)
+        msg = to_s(value)
         if @status_used
           puts msg
         else
