@@ -1,5 +1,9 @@
 
+Wed Jun 1 - 0.0.3
+ * Syntactic sugar for skipping the explicit constructor;
+   running YourPlugin.run! works as expected
+ * TODO list... it's like a toddler-sized roadmap.
+
 Tue May 24 - 0.0.2
  * Fixes exit_with() bug which doesn't use passed in `value`
  * Adds methods for customizing return messages
-
