@@ -1,0 +1,6 @@
+
+TODOs - feel free to submit patches to this too...
+
+ [ ] provide pre-parsed arguments Hash for ease for use
+ [ ] cleanup all this Plugin#threshold nonsense
+ [ ] check ruby 1.9 compatibility
