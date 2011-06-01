@@ -40,4 +40,4 @@ class DiskfreePlugin < Nagios::Plugin
   end
 end
 
-DiskfreePlugin.new.run!
+DiskfreePlugin.run!

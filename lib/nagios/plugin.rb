@@ -1,6 +1,13 @@
 module Nagios
   class Plugin
 
+    class << self
+      # Syntactic sugar for creating a new instance automagically
+      def run!
+        new.run!
+      end
+    end
+
     def initialize
       @config = Nagios::Config.new
       @status_used = nil
