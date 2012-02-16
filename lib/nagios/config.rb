@@ -26,7 +26,7 @@ module Nagios
     end
 
     def []=(field, value)
-      @settings[field] = vaule
+      @settings[field] = value
     end
 
     def parse!
