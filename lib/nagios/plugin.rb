@@ -71,6 +71,7 @@ module Nagios
 
       def exit_unknown(exc_info)
         puts "UNKNOWN (Exception): #{exc_info}"
+        puts exc_info.backtrace.join("\n")
         exit Nagios::EXIT_UNKNOWN
       end
 
